@@ -1,0 +1,49 @@
+// フォント種類
+$noto-sans: 'Noto Sans JP', sans-serif;
+$noto-serif: 'Noto Serif JP', serif;
+$garamo: 'Cormorant Garamond', serif;
+
+// カラー
+$base-color:#F7839F;
+$text-base:#454545;
+$bg-color:#F7F7F7;
+
+//フォントサイズ
+html {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+p {
+  font-size: 1.6rem;
+  color: $text-base;
+  line-height: 1.75;
+  font-weight: 400;
+
+  @include mq(md) {
+    font-size: 1.4rem;
+  }
+}
+
+a {
+  &:hover {
+    opacity: .7;
+    transition: .3s;
+  }
+}
+
+h2 {
+  letter-spacing: 0.08em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+main {
+  min-width: 1220px;
+}
