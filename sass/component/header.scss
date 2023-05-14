@@ -1,0 +1,184 @@
+.header {
+    position: fixed;
+    background: #fff;
+    text-align: center;
+    z-index: 9999;
+    
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+        font-family: $noto-serif;
+        padding: 24px 140px 26px;
+        margin: 0 auto;
+        @include mq(md) {
+            padding: 0 16px;
+            height: 62px;
+            display: flex;
+            justify-content: space-around;
+            font-family: $noto-serif;
+            margin: 0 auto;
+            align-items: center;
+        }
+    }
+    &__logo {
+        display: flex;
+        vertical-align: baseline;
+        @include mq(md) {
+            margin-top: 10px;
+        }
+    }
+    &__svg {
+        width: 165px;
+        height: 40px;
+        @include mq(md) {
+            width: 123px;
+            height: 30px;
+        }
+    }
+
+    //header＿＿right
+    &__nav {
+        display: flex;
+        vertical-align: baseline;
+        align-items: center;
+        padding-inline-start: 180px;
+        
+        @include mq(md) {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            flex-direction: column;
+            align-items: flex-start;
+            top: 62px;
+            left: 0;
+            z-index: 80;
+            background-color: #fafafa;
+            transition: all 0.5s;
+            padding-inline-start: 0;
+        }
+    }
+    //header__ul
+    &__menu {
+        display: flex;
+        @include mq(md) {
+            flex-direction: column;
+            align-items: flex-start;
+            pointer-events: none;
+            
+        }
+    }
+
+    //header__li
+    li {
+        font-size: 1.6rem;
+        margin-right: 32px;
+        letter-spacing: 0.016em;
+        @include mq(md) {
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 0 37px;
+            position: relative;
+        }
+    }
+
+    //header__li img
+    &__img {
+        width: 12px;
+        margin-right: 8px;
+        margin-top: 2px;
+        @include mq(md) {
+            width: 14px;
+            height: 18px;
+            margin-left: -21px;
+        }
+    }
+
+    //header__li a 
+    &__link {
+        color: $text-base;
+        text-decoration: none;
+        &:visited {
+            color: $base-color;
+        }
+        &:hover {
+            color: $base-color;
+        }
+        @include mq(md) {
+            width: 100%;
+            font-size: 100%;
+            box-sizing: border-box;
+            color:$text-base;
+            text-decoration: none;
+            position: relative;
+            margin-top: 2px;
+            padding-left: -2px;
+            &::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-top: solid 2px #ffffff;
+                border-right: solid 2px #ffffff;
+                transform: rotate(45deg);
+                position: absolute;
+                right: 11px;
+                top: 16px;
+            }
+        }
+    }
+
+
+
+    //hamburger menu
+    &__menu-btn {
+        display: none;
+        @include mq(md) {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            height: 30px;
+            width: 30px;
+            border-radius: 4px;
+            justify-content: center;
+            align-items: center;
+            z-index: 90;
+            background-color: $base-color;
+            span, span::before, span::after {
+                content: '';
+                display: block;
+                height: 1px;
+                width: 20px;
+                border-radius: 3px;
+                background-color: #ffffff;
+                position: absolute;
+            }
+            span::before {
+                bottom: 6px;
+            }
+            span::after {
+                top: 6px;
+            }
+        }
+    }
+    &__hamburgermenu {
+        @include mq(md) {
+            #menu-btn-check:checked ~ .header__menu-btn span {
+                background-color: rgba(255, 255, 255, 0);
+            }
+            #menu-btn-check:checked ~ .header__menu-btn span::before {
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+            #menu-btn-check:checked ~ .header__menu-btn span::after {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    #menu-btn-check {
+        display: none;
+    }
+
+
+}

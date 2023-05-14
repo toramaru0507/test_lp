@@ -1,0 +1,41 @@
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__left {
+  display: flex;
+}
+
+.header__logo {
+  width: 165px;
+  vertical-align: baseline;
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.header__nav {
+  margin-top: 38px;
+  vertical-align: baseline;
+  margin-right: 140px;
+}
+
+.header__menu {
+  display: flex;
+  margin-left: 100px;
+}
+
+.header__menu-item {
+  font-size: 1.6rem;
+  margin-right: 32px;
+}
+
+.header__img {
+  width: 12px;
+  margin-right: 8px;
+  vertical-align: baseline;
+}
+
+.header__link:hover {
+  color: #F7839F;
+}
